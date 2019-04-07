@@ -556,14 +556,14 @@
 
 - (IBAction)openAppStore:(id)sender;
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/SoundCloud"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/SoundCloud"] options:@{} completionHandler:nil];
 }
 
 - (IBAction)openApp:(id)sender;
 {
     NSURL *appURL = [self appURL];
     if (appURL) {
-        [[UIApplication sharedApplication] openURL:appURL];
+        [[UIApplication sharedApplication] openURL:appURL options:@{} completionHandler:nil];;
     }
 }
 

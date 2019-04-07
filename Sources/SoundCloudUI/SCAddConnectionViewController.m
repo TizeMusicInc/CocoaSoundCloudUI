@@ -85,14 +85,9 @@
                          if (URLString) self.authorizeURL = [NSURL URLWithString:URLString];
                          
                      } else {
-                         
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SCLocalizedString(@"connection_faild", @"Connection failed")
-                                                                         message:[error localizedDescription]
-                                                                        delegate:nil
-                                                               cancelButtonTitle:SCLocalizedString(@"connection_error_ok", @"OK")
-                                                               otherButtonTitles:nil];
-                         [alert show];
-
+                         UIAlertController *alert = [UIAlertController alertControllerWithTitle:SCLocalizedString(@"connection_faild", @"Connection failed") message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                         [alert addAction:[UIAlertAction actionWithTitle:SCLocalizedString(@"connection_error_ok", @"OK") style: UIAlertActionStyleCancel handler:nil]];
+                         [self presentViewController:alert animated:true completion:nil];
                      }
                  }];
     }

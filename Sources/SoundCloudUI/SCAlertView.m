@@ -41,15 +41,4 @@
     [alert show];
 }
 
-
-#pragma mark UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;
-{
-    if (self.block) {
-        self.block(buttonIndex, self.cancelButtonIndex == buttonIndex);
-    }
-}
-
-
 @end
